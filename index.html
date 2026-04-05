@@ -89,10 +89,9 @@
         .school-logo-svg:hover {
             transform: scale(1.05) rotate(3deg);
         }
-        /* Lingkaran luar logo berputar lambat */
-        .logo-outer-ring {
-            animation: rotateStar 30s linear infinite;
-            transform-origin: center;
+        /* Logo wrapper tambahan */
+        .school-logo-svg {
+            display: block;
         }
   </style>
   <style>body { box-sizing: border-box; }</style>
@@ -110,12 +109,66 @@
 
       <!-- ===== LOGO SEKOLAH SVG ===== -->
       <div class="school-logo-wrapper">
-        <img src="logo SMA.png" width="90" height="90">
-          <!-- Lingkaran latar belakang -->
-          <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="4"/>
+        <svg width="100" height="100" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+             style="display:block;filter:drop-shadow(0 4px 16px rgba(212,175,55,0.6));">
 
-                   <!-- Lingkaran dekoratif dalam -->
-          <circle cx="100" cy="100" r="75" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
+          <!-- Lingkaran latar belakang utama -->
+          <circle cx="100" cy="100" r="96" fill="#0d2818"/>
+          <circle cx="100" cy="100" r="96" fill="none" stroke="#d4af37" stroke-width="4"/>
+
+          <!-- Ornamen bintang di 4 penjuru (berputar pakai animateTransform) -->
+          <g>
+            <animateTransform attributeName="transform" type="rotate"
+              from="0 100 100" to="360 100 100" dur="30s" repeatCount="indefinite"/>
+            <polygon points="100,8 103.5,18 114,18 105.5,24.5 108.5,35 100,28.5 91.5,35 94.5,24.5 86,18 96.5,18"
+                     fill="#d4af37" opacity="0.85"/>
+            <polygon points="100,192 103.5,182 114,182 105.5,175.5 108.5,165 100,171.5 91.5,165 94.5,175.5 86,182 96.5,182"
+                     fill="#d4af37" opacity="0.85"/>
+            <polygon points="8,100 18,96.5 18,86 24.5,94.5 35,91.5 28.5,100 35,108.5 24.5,105.5 18,114 18,103.5"
+                     fill="#d4af37" opacity="0.85"/>
+            <polygon points="192,100 182,103.5 182,114 175.5,105.5 165,108.5 171.5,100 165,91.5 175.5,94.5 182,86 182,96.5"
+                     fill="#d4af37" opacity="0.85"/>
+          </g>
+
+          <!-- Lingkaran garis putus dalam -->
+          <circle cx="100" cy="100" r="78" fill="none" stroke="#d4af37"
+                  stroke-width="1.5" stroke-dasharray="6 4" opacity="0.45"/>
+
+          <!-- Buku terbuka - halaman kiri -->
+          <rect x="55" y="70" width="40" height="55" rx="5" fill="#c9a227"/>
+          <rect x="57" y="72" width="36" height="51" rx="3" fill="#d4af37"/>
+          <!-- Garis isi halaman kiri -->
+          <line x1="63" y1="84" x2="87" y2="84" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="63" y1="92" x2="87" y2="92" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="63" y1="100" x2="87" y2="100" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="63" y1="108" x2="80" y2="108" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+
+          <!-- Buku terbuka - halaman kanan -->
+          <rect x="105" y="70" width="40" height="55" rx="5" fill="#c9a227"/>
+          <rect x="107" y="72" width="36" height="51" rx="3" fill="#f0cc50"/>
+          <!-- Garis isi halaman kanan -->
+          <line x1="113" y1="84" x2="137" y2="84" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="113" y1="92" x2="137" y2="92" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="113" y1="100" x2="137" y2="100" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="113" y1="108" x2="130" y2="108" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+
+          <!-- Punggung/spine buku -->
+          <rect x="95" y="66" width="10" height="63" rx="5" fill="#9a7209"/>
+
+          <!-- Bintang emas di atas buku -->
+          <polygon points="100,46 103.5,57 115,57 106,64 109,75 100,68 91,75 94,64 85,57 96.5,57"
+                   fill="#d4af37" stroke="#f0cc50" stroke-width="1.5"/>
+
+          <!-- Inisial KU -->
+          <text x="100" y="153" text-anchor="middle"
+                font-family="Georgia,serif" font-weight="bold"
+                font-size="14" fill="#d4af37" letter-spacing="4">KU</text>
+
+          <!-- Nama sekolah kecil -->
+          <text x="100" y="167" text-anchor="middle"
+                font-family="Arial,sans-serif" font-size="7.5"
+                fill="#d4af37" opacity="0.8" letter-spacing="1">KHAIRUL ULUM</text>
+
         </svg>
       </div>
       <!-- ===== AKHIR LOGO ===== -->
@@ -187,13 +240,25 @@
     <div class="flex items-center gap-3">
      <!-- Logo mini di header ujian -->
      <div class="w-10 h-10 flex-shrink-0">
-      <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="6"/>
-        <rect x="58" y="72" width="38" height="52" rx="4" fill="#d4af37" opacity="0.9"/>
-        <rect x="104" y="72" width="38" height="52" rx="4" fill="#f4d03f" opacity="0.9"/>
-        <rect x="96" y="68" width="8" height="60" rx="4" fill="#b8960c"/>
-        <polygon points="100,48 103,58 114,58 105,64 108,75 100,68 92,75 95,64 86,58 97,58" fill="#d4af37"/>
-        <text x="100" y="155" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="15" fill="#d4af37" letter-spacing="3">KU</text>
+      <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+           style="display:block;">
+        <circle cx="100" cy="100" r="96" fill="#0d2818"/>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#d4af37" stroke-width="6"/>
+        <rect x="55" y="70" width="40" height="55" rx="5" fill="#c9a227"/>
+        <rect x="57" y="72" width="36" height="51" rx="3" fill="#d4af37"/>
+        <line x1="63" y1="84" x2="87" y2="84" stroke="#0d2818" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="63" y1="94" x2="87" y2="94" stroke="#0d2818" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="63" y1="104" x2="80" y2="104" stroke="#0d2818" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="105" y="70" width="40" height="55" rx="5" fill="#c9a227"/>
+        <rect x="107" y="72" width="36" height="51" rx="3" fill="#f0cc50"/>
+        <line x1="113" y1="84" x2="137" y2="84" stroke="#0d2818" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="113" y1="94" x2="137" y2="94" stroke="#0d2818" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="113" y1="104" x2="130" y2="104" stroke="#0d2818" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="95" y="66" width="10" height="63" rx="5" fill="#9a7209"/>
+        <polygon points="100,46 103.5,57 115,57 106,64 109,75 100,68 91,75 94,64 85,57 96.5,57"
+                 fill="#d4af37" stroke="#f0cc50" stroke-width="1.5"/>
+        <text x="100" y="153" text-anchor="middle" font-family="Georgia,serif" font-weight="bold"
+              font-size="14" fill="#d4af37" letter-spacing="4">KU</text>
       </svg>
      </div>
      <div>
@@ -233,13 +298,31 @@
      <div class="absolute inset-0 pattern-overlay opacity-30"></div>
      <div class="relative z-10">
       <div class="flex justify-center mb-4">
-       <svg class="logo-shimmer" width="70" height="70" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="6"/>
-        <rect x="58" y="72" width="38" height="52" rx="4" fill="#d4af37" opacity="0.9"/>
-        <rect x="104" y="72" width="38" height="52" rx="4" fill="#f4d03f" opacity="0.9"/>
-        <rect x="96" y="68" width="8" height="60" rx="4" fill="#b8960c"/>
-        <polygon points="100,48 103,58 114,58 105,64 108,75 100,68 92,75 95,64 86,58 97,58" fill="#d4af37"/>
-        <text x="100" y="155" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="15" fill="#d4af37" letter-spacing="3">KU</text>
+       <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+            style="display:block;filter:drop-shadow(0 4px 12px rgba(212,175,55,0.5));">
+        <circle cx="100" cy="100" r="96" fill="#0d2818"/>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#d4af37" stroke-width="4"/>
+        <circle cx="100" cy="100" r="78" fill="none" stroke="#d4af37"
+                stroke-width="1.5" stroke-dasharray="6 4" opacity="0.45"/>
+        <rect x="55" y="70" width="40" height="55" rx="5" fill="#c9a227"/>
+        <rect x="57" y="72" width="36" height="51" rx="3" fill="#d4af37"/>
+        <line x1="63" y1="84" x2="87" y2="84" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="63" y1="92" x2="87" y2="92" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="63" y1="100" x2="87" y2="100" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="63" y1="108" x2="80" y2="108" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <rect x="105" y="70" width="40" height="55" rx="5" fill="#c9a227"/>
+        <rect x="107" y="72" width="36" height="51" rx="3" fill="#f0cc50"/>
+        <line x1="113" y1="84" x2="137" y2="84" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="113" y1="92" x2="137" y2="92" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="113" y1="100" x2="137" y2="100" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="113" y1="108" x2="130" y2="108" stroke="#0d2818" stroke-width="2.2" stroke-linecap="round"/>
+        <rect x="95" y="66" width="10" height="63" rx="5" fill="#9a7209"/>
+        <polygon points="100,46 103.5,57 115,57 106,64 109,75 100,68 91,75 94,64 85,57 96.5,57"
+                 fill="#d4af37" stroke="#f0cc50" stroke-width="1.5"/>
+        <text x="100" y="153" text-anchor="middle" font-family="Georgia,serif" font-weight="bold"
+              font-size="14" fill="#d4af37" letter-spacing="4">KU</text>
+        <text x="100" y="167" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5"
+              fill="#d4af37" opacity="0.8" letter-spacing="1">KHAIRUL ULUM</text>
        </svg>
       </div>
       <h2 class="text-2xl font-bold text-white" style="font-family:'Playfair Display',serif;">Ujian Selesai</h2>
@@ -323,7 +406,7 @@
                 'Ekonomi': 'https://docs.google.com/forms/d/e/FORM_ID_EKONOMI/viewform?embedded=true',
                 'Sejarah': 'https://docs.google.com/forms/d/e/FORM_ID_SEJARAH/viewform?embedded=true',
                 'Geografi': 'https://docs.google.com/forms/d/e/FORM_ID_GEOGRAFI/viewform?embedded=true',
-                'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/1FAIpQLSd0jEb1EqF1auyEGZAL9JhhLrgkbHrZtWGKyr_0T5aDomUQ8g/viewform?embedded=true',
+                'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/1FAIpQLSdNrqcdi4Lxvjqznqg8IMQ44CylyTKjr2zTdpHsX321z0_Ytg/viewform?usp=sharing&ouid=118312355619034914939',
                 'PJOK': 'https://docs.google.com/forms/d/e/FORM_ID_PJOK/viewform?embedded=true',
                 'Seni Budaya': 'https://docs.google.com/forms/d/e/FORM_ID_SENI/viewform?embedded=true',
                 'Bahasa Arab': 'https://docs.google.com/forms/d/e/FORM_ID_ARAB/viewform?embedded=true'
@@ -341,7 +424,7 @@
                 'Ekonomi': 'https://docs.google.com/forms/d/e/FORM_ID_EKONOMI_2/viewform?embedded=true',
                 'Sejarah': 'https://docs.google.com/forms/d/e/FORM_ID_SEJARAH_2/viewform?embedded=true',
                 'Geografi': 'https://docs.google.com/forms/d/e/FORM_ID_GEOGRAFI_2/viewform?embedded=true',
-                'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/1FAIpQLSd0jEb1EqF1auyEGZAL9JhhLrgkbHrZtWGKyr_0T5aDomUQ8g/viewform?embedded=true',
+                'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/FORM_ID_TIK_2/viewform?embedded=true',
                 'PJOK': 'https://docs.google.com/forms/d/e/FORM_ID_PJOK_2/viewform?embedded=true',
                 'Seni Budaya': 'https://docs.google.com/forms/d/e/FORM_ID_SENI_2/viewform?embedded=true',
                 'Bahasa Arab': 'https://docs.google.com/forms/d/e/FORM_ID_ARAB_2/viewform?embedded=true'
