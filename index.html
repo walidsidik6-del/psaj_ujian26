@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="id" class="h-full">
-<head>
+ <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -8,835 +8,594 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#1a472a">
   <title>PSAJ Secure Exam - SMA Khairul Ulum</title>
-  <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiUFNBSiBTZWN1cmUgRXhhbSIsInNob3J0X25hbWUiOiJQU0FKIiwiZGVzY3JpcHRpb24iOiJBcGxpa2FzaSBVamlhbiBQU0FKIFNNQSBLaGFpcnVsIFVsdW0iLCJzdGFydF91cmwiOiIvIiwiZGlzcGxheSI6ImZ1bGxzY3JlZW4iLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzFhNDcyYSIsInRoZW1lX2NvbG9yIjoiIzFhNDcyYSJ9">
+  <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiUFNBSiBTZWN1cmUgRXhhbSIsInNob3J0X25hbWUiOiJQU0FKIiwiZGVzY3JpcHRpb24iOiJBcGxpa2FzaSBVamlhbiBQU0FKIFNNQSBLaGFpcnVsIFVsdW0iLCJzdGFydF91cmwiOiIvIiwiZGlzcGxheSI6ImZ1bGxzY3JlZW4iLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzFhNDcyYSIsInRoZW1lX2NvbG9yIjoiIzFhNDcyYSIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlNVEkzSWlCb1pXbG5hSFE5SWpFeU55SWdkbWxsZDBKdmVEMGlNQ0F3SURFeU55QXhNamNpSUhodGJHNXpQU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh5TURBd0wzTjJaeUkrUEhKbFkzUWdkMmxrZEdnOUlqRXlOeUlnYUdWcFoyaDBQU0l4TWpjaUlHWnBiR3c5SWlNeFlUUTNNbUVpSUhKNFBTSXlNQ0l2UGp4MFpYaDBJSGc5SWpZeklpQjVQU0kzTUNJZ1ptOXVkQzFtWVcxcGJIazlJa2RsYjNKbmFXRXNJSE5sY21sbUlpQm1iMjUwTFhOcGVtVTlJakl3SWlCbWFXeHNQU0lqWm1abVptWm1JaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWo1UVUwRktQQzkwWlhoMFBqd3ZjM1puUGc9PSIsInNpemVzIjoiMTI4eDEyOCIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a472a; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        
+        * {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-touch-callout: none !important;
+            -webkit-user-drag: none !important;
+            user-drag: none !important;
+        }
+        
+        input, select {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.4); }
+            50% { box-shadow: 0 0 20px 10px rgba(212,175,55,0.2); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        @keyframes rotateStar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes shimmer {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
 
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #1a472a; }
-    ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+        .animate-pulse-gold { animation: pulse-gold 2s infinite; }
+        .animate-shake { animation: shake 0.5s ease-in-out; }
+        .logo-shimmer { animation: shimmer 3s ease-in-out infinite; }
 
-    * {
-      -webkit-user-select: none !important;
-      -moz-user-select: none !important;
-      -ms-user-select: none !important;
-      user-select: none !important;
-      -webkit-touch-callout: none !important;
-      -webkit-user-drag: none !important;
-      user-drag: none !important;
-    }
-    input, select {
-      -webkit-user-select: text !important;
-      -moz-user-select: text !important;
-      -ms-user-select: text !important;
-      user-select: text !important;
-    }
+        .bg-gradient-main { background: linear-gradient(135deg, #1a472a 0%, #0d2818 50%, #1a472a 100%); }
+        .bg-gradient-gold { background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%); }
 
-    @keyframes fadeIn { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes pulse-gold { 0%,100% { box-shadow:0 0 0 0 rgba(212,175,55,.4); } 50% { box-shadow:0 0 20px 10px rgba(212,175,55,.2); } }
-    @keyframes shake { 0%,100% { transform:translateX(0); } 25% { transform:translateX(-10px); } 75% { transform:translateX(10px); } }
-    @keyframes shimmer { 0% { opacity:.7; } 50% { opacity:1; } 100% { opacity:.7; } }
-    @keyframes countdownFlash { 0%,100% { opacity:1; } 50% { opacity:.3; } }
-    @keyframes warningPulse { 0%,100% { background:rgba(239,68,68,.15); } 50% { background:rgba(239,68,68,.35); } }
-    @keyframes slideDown { from { transform:translateY(-100%); opacity:0; } to { transform:translateY(0); opacity:1; } }
+        .glass-effect {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
-    .animate-fade-in { animation: fadeIn .5s ease-out forwards; }
-    .animate-pulse-gold { animation: pulse-gold 2s infinite; }
-    .animate-shake { animation: shake .5s ease-in-out; }
-    .logo-shimmer { animation: shimmer 3s ease-in-out infinite; }
-    .countdown-flash { animation: countdownFlash .8s ease-in-out infinite; }
-    .warning-pulse { animation: warningPulse 1.5s ease-in-out infinite; }
-    .slide-down { animation: slideDown .4s ease-out forwards; }
+        .pattern-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
 
-    .bg-gradient-main { background: linear-gradient(135deg,#1a472a 0%,#0d2818 50%,#1a472a 100%); }
-    .bg-gradient-gold { background: linear-gradient(135deg,#d4af37 0%,#f4d03f 50%,#d4af37 100%); }
-
-    .glass-effect {
-      background: rgba(255,255,255,.97);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    .pattern-overlay {
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    body { box-sizing: border-box; }
-
-    /* Violation countdown overlay */
-    #violation-countdown-bar {
-      height: 6px;
-      background: linear-gradient(90deg, #ef4444, #dc2626);
-      transition: width linear;
-    }
+        /* ===== LOGO SEKOLAH ===== */
+        .school-logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .school-logo-svg {
+            filter: drop-shadow(0 4px 16px rgba(212,175,55,0.5));
+            transition: transform 0.3s ease;
+        }
+        .school-logo-svg:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+        /* Lingkaran luar logo berputar lambat */
+        .logo-outer-ring {
+            animation: rotateStar 30s linear infinite;
+            transform-origin: center;
+        }
   </style>
-</head>
-<body class="h-full overflow-auto bg-gradient-main pattern-overlay">
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full overflow-auto bg-gradient-main pattern-overlay">
 
-<!-- ==================== HALAMAN LOGIN ==================== -->
-<div id="login-page" class="min-h-full flex items-center justify-center p-4">
-  <div class="w-full max-w-md glass-effect rounded-3xl shadow-2xl overflow-hidden animate-fade-in">
+  <!-- ==================== HALAMAN LOGIN ==================== -->
+  <div id="login-page" class="min-h-full flex items-center justify-center p-4">
+   <div class="w-full max-w-md glass-effect rounded-3xl shadow-2xl overflow-hidden animate-fade-in">
+
+    <!-- Header dengan Logo Sekolah -->
     <div class="bg-gradient-main p-6 text-center relative overflow-hidden">
-      <div class="absolute inset-0 pattern-overlay opacity-30"></div>
-      <div class="relative z-10">
-        <div class="flex justify-center mb-3">
-          <img src="logo SMA.png" width="90" height="90" onerror="this.style.display='none'">
-        </div>
-        <h1 class="text-xl font-bold text-white" style="font-family:'Playfair Display',serif;">SMA Khairul Ulum</h1>
-        <div class="mt-2 inline-block px-4 py-1 bg-gradient-gold rounded-full">
-          <span class="text-sm font-bold text-green-900" style="font-family:'Inter',sans-serif;">⚡ PSAJ SECURE EXAM</span>
-        </div>
-        <p class="text-green-200 text-xs mt-2" style="font-family:'Inter',sans-serif;">Penilaian Sumatif Akhir Jenjang 2025/2026</p>
-      </div>
-    </div>
+     <div class="absolute inset-0 pattern-overlay opacity-30"></div>
+     <div class="relative z-10">
 
-    <form id="login-form" class="p-6 space-y-4" onsubmit="return false;">
-      <div class="space-y-1">
-        <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">📝 Nama Lengkap</label>
-        <input type="text" id="nama" required placeholder="Masukkan nama lengkap"
-               class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800"
-               style="font-family:'Inter',sans-serif;">
-      </div>
-      <div class="space-y-1">
-        <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">🔢 NIS (Nomor Induk Siswa)</label>
-        <input type="number" id="nis" required placeholder="Masukkan NIS"
-               class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800"
-               style="font-family:'Inter',sans-serif;">
-      </div>
-      <div class="space-y-1">
-        <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">🏫 Kelas</label>
-        <select id="kelas" required
-                class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800 bg-white"
-                style="font-family:'Inter',sans-serif;">
-          <option value="">-- Pilih Kelas --</option>
-          <option value="XII-1">XII-1</option>
-          <option value="XII-2">XII-2</option>
-        </select>
-      </div>
-      <div class="space-y-1">
-        <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">📚 Mata Pelajaran</label>
-        <select id="mapel" required disabled
-                class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed"
-                style="font-family:'Inter',sans-serif;">
-          <option value="">-- Pilih Kelas Terlebih Dahulu --</option>
-        </select>
-      </div>
-      <div class="space-y-1">
-        <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">🔐 Kode Ujian</label>
-        <input type="password" id="kode-ujian" required placeholder="Masukkan kode ujian"
-               class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800"
-               style="font-family:'Inter',sans-serif;">
-      </div>
-      <div id="error-message" class="hidden p-3 bg-red-100 border border-red-400 text-red-700 rounded-xl text-sm text-center" style="font-family:'Inter',sans-serif;"></div>
-      <button type="submit" id="btn-login"
-              class="w-full py-4 bg-gradient-gold text-green-900 font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300"
-              style="font-family:'Inter',sans-serif;">
-        🚀 MULAI UJIAN
-      </button>
-      <div class="mt-4 p-3 bg-yellow-50 border border-yellow-300 rounded-xl">
-        <p class="text-xs text-yellow-800 text-center" style="font-family:'Inter',sans-serif;">
-          ⚠️ <strong>PERINGATAN:</strong> Ujian hanya bisa dilakukan 1x. Keluar tab/aplikasi = KECURANGAN = UJIAN DIRESET & DIHENTIKAN.
-        </p>
-      </div>
-    </form>
-  </div>
-</div>
+      <!-- ===== LOGO SEKOLAH SVG ===== -->
+      <div class="school-logo-wrapper">
+        <img src="logo SMA.png" width="90" height="90">
+          <!-- Lingkaran latar belakang -->
+          <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="4"/>
 
-<!-- ==================== HALAMAN UJIAN ==================== -->
-<div id="exam-page" class="hidden h-full flex flex-col" style="min-height:100vh;">
-  <div class="bg-gradient-main p-3 flex items-center justify-between shadow-lg relative z-50">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 flex-shrink-0">
-        <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="6"/>
-          <rect x="58" y="72" width="38" height="52" rx="4" fill="#d4af37" opacity=".9"/>
-          <rect x="104" y="72" width="38" height="52" rx="4" fill="#f4d03f" opacity=".9"/>
-          <rect x="96" y="68" width="8" height="60" rx="4" fill="#b8960c"/>
-          <polygon points="100,48 103,58 114,58 105,64 108,75 100,68 92,75 95,64 86,58 97,58" fill="#d4af37"/>
-          <text x="100" y="155" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="15" fill="#d4af37" letter-spacing="3">KU</text>
+                   <!-- Lingkaran dekoratif dalam -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>
         </svg>
       </div>
-      <div>
-        <h2 id="exam-title" class="text-white font-bold text-sm" style="font-family:'Playfair Display',serif;">PSAJ - Mata Pelajaran</h2>
-        <p id="student-info" class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">Nama - NIS - Kelas</p>
+      <!-- ===== AKHIR LOGO ===== -->
+
+      <h1 id="school-title" class="text-xl font-bold text-white" style="font-family:'Playfair Display',serif;">SMA Khairul Ulum</h1>
+      <div class="mt-2 inline-block px-4 py-1 bg-gradient-gold rounded-full">
+        <span class="text-sm font-bold text-green-900" style="font-family:'Inter',sans-serif;"> PSAJ SECURE EXAM </span>
       </div>
+      <p class="text-green-200 text-xs mt-2" style="font-family:'Inter',sans-serif;">Penilaian Sumatif Akhir Jenjang 2025/2026</p>
+     </div>
+    </div>
+
+    <!-- Form Login -->
+    <form id="login-form" class="p-6 space-y-4" onsubmit="return false;">
+     <div class="space-y-1">
+      <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">📝 Nama Lengkap</label>
+      <input type="text" id="nama" required placeholder="Masukkan nama lengkap"
+             class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800"
+             style="font-family:'Inter',sans-serif;">
+     </div>
+     <div class="space-y-1">
+      <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">🔢 NIS (Nomor Induk Siswa)</label>
+      <input type="number" id="nis" required placeholder="Masukkan NIS"
+             class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800"
+             style="font-family:'Inter',sans-serif;">
+     </div>
+     <div class="space-y-1">
+      <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">🏫 Kelas</label>
+      <select id="kelas" required
+              class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800 bg-white"
+              style="font-family:'Inter',sans-serif;">
+        <option value="">-- Pilih Kelas --</option>
+        <option value="XII-1">XII-1</option>
+        <option value="XII-2">XII-2</option>
+      </select>
+     </div>
+     <div class="space-y-1">
+      <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">📚 Mata Pelajaran</label>
+      <select id="mapel" required disabled
+              class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed"
+              style="font-family:'Inter',sans-serif;">
+        <option value="">-- Pilih Kelas Terlebih Dahulu --</option>
+      </select>
+     </div>
+     <div class="space-y-1">
+      <label class="block text-sm font-semibold text-green-800" style="font-family:'Inter',sans-serif;">🔐 Kode Ujian</label>
+      <input type="password" id="kode-ujian" required placeholder="Masukkan kode ujian"
+             class="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all outline-none text-gray-800"
+             style="font-family:'Inter',sans-serif;">
+     </div>
+     <div id="error-message" class="hidden p-3 bg-red-100 border border-red-400 text-red-700 rounded-xl text-sm text-center" style="font-family:'Inter',sans-serif;"></div>
+     <button type="submit" id="btn-login"
+             class="w-full py-4 bg-gradient-gold text-green-900 font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300"
+             style="font-family:'Inter',sans-serif;">
+       🚀 MULAI UJIAN
+     </button>
+     <div class="mt-4 p-3 bg-yellow-50 border border-yellow-300 rounded-xl">
+      <p class="text-xs text-yellow-800 text-center" style="font-family:'Inter',sans-serif;">
+        ⚠️ <strong>PERINGATAN:</strong> Ujian hanya bisa dilakukan 1x. Keluar tab/aplikasi = KECURANGAN = UJIAN DIHENTIKAN.
+      </p>
+     </div>
+    </form>
+   </div>
+  </div>
+
+  <!-- ==================== HALAMAN UJIAN ==================== -->
+  <div id="exam-page" class="hidden h-full flex flex-col">
+   <div class="bg-gradient-main p-3 flex items-center justify-between shadow-lg relative z-50">
+    <div class="flex items-center gap-3">
+     <!-- Logo mini di header ujian -->
+     <div class="w-10 h-10 flex-shrink-0">
+      <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="6"/>
+        <rect x="58" y="72" width="38" height="52" rx="4" fill="#d4af37" opacity="0.9"/>
+        <rect x="104" y="72" width="38" height="52" rx="4" fill="#f4d03f" opacity="0.9"/>
+        <rect x="96" y="68" width="8" height="60" rx="4" fill="#b8960c"/>
+        <polygon points="100,48 103,58 114,58 105,64 108,75 100,68 92,75 95,64 86,58 97,58" fill="#d4af37"/>
+        <text x="100" y="155" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="15" fill="#d4af37" letter-spacing="3">KU</text>
+      </svg>
+     </div>
+     <div>
+      <h2 id="exam-title" class="text-white font-bold text-sm" style="font-family:'Playfair Display',serif;">PSAJ - Mata Pelajaran</h2>
+      <p id="student-info" class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">Nama - NIS - Kelas</p>
+     </div>
     </div>
     <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-      <span class="text-2xl">⏱️</span>
-      <div id="timer" class="text-white font-bold text-lg font-mono" style="font-family:'Inter',sans-serif;">120:00</div>
+     <span class="text-2xl">⏱️</span>
+     <div id="timer" class="text-white font-bold text-lg font-mono" style="font-family:'Inter',sans-serif;">120:00</div>
     </div>
-  </div>
-  <div class="bg-green-800 px-4 py-2 flex items-center justify-between">
+   </div>
+   <div class="bg-green-800 px-4 py-2 flex items-center justify-between">
     <div class="flex items-center gap-2">
-      <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
-      <span class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">Mode Aman Aktif</span>
+     <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+     <span class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">Mode Aman Aktif</span>
     </div>
     <div class="flex items-center gap-2">
-      <span class="text-yellow-400 text-xs" style="font-family:'Inter',sans-serif;">🔒 ZERO TOLERANCE — 1x pelanggaran = Soal Direset</span>
+     <span class="text-yellow-400 text-xs" style="font-family:'Inter',sans-serif;">🔒 ZERO TOLERANCE - 1x pelanggaran = Terminate</span>
     </div>
-  </div>
-  <!-- Warning bar (hidden normally) -->
-  <div id="warning-bar" class="hidden warning-pulse px-4 py-2 text-center">
-    <span id="warning-bar-text" class="text-red-800 text-xs font-bold" style="font-family:'Inter',sans-serif;"></span>
-  </div>
-  <div id="form-container" class="flex-1 bg-white relative" style="min-height:0;">
-    <iframe id="exam-iframe" class="w-full h-full border-0" style="min-height:calc(100vh - 120px);" allowfullscreen></iframe>
+   </div>
+   <div id="form-container" class="flex-1 bg-white relative">
+    <iframe id="exam-iframe" class="w-full h-full border-0" allowfullscreen></iframe>
     <div id="loading-overlay" class="absolute inset-0 bg-white flex items-center justify-center">
-      <div class="text-center">
-        <div class="w-16 h-16 border-4 border-green-200 border-t-green-600 rounded-full animate-spin mx-auto mb-4"></div>
-        <p class="text-green-800 font-semibold" style="font-family:'Inter',sans-serif;">Memuat soal ujian...</p>
-      </div>
+     <div class="text-center">
+      <div class="w-16 h-16 border-4 border-green-200 border-t-green-600 rounded-full animate-spin mx-auto mb-4"></div>
+      <p class="text-green-800 font-semibold" style="font-family:'Inter',sans-serif;">Memuat soal ujian...</p>
+     </div>
     </div>
+   </div>
   </div>
-</div>
 
-<!-- ==================== HALAMAN SELESAI ==================== -->
-<div id="finish-page" class="hidden min-h-full flex items-center justify-center p-4">
-  <div class="w-full max-w-md glass-effect rounded-3xl shadow-2xl overflow-hidden animate-fade-in text-center">
+  <!-- ==================== HALAMAN SELESAI ==================== -->
+  <div id="finish-page" class="hidden min-h-full flex items-center justify-center p-4">
+   <div class="w-full max-w-md glass-effect rounded-3xl shadow-2xl overflow-hidden animate-fade-in text-center">
     <div class="bg-gradient-main p-8 relative overflow-hidden">
-      <div class="absolute inset-0 pattern-overlay opacity-30"></div>
-      <div class="relative z-10">
-        <svg class="logo-shimmer mx-auto mb-4" width="70" height="70" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="6"/>
-          <rect x="58" y="72" width="38" height="52" rx="4" fill="#d4af37" opacity=".9"/>
-          <rect x="104" y="72" width="38" height="52" rx="4" fill="#f4d03f" opacity=".9"/>
-          <rect x="96" y="68" width="8" height="60" rx="4" fill="#b8960c"/>
-          <polygon points="100,48 103,58 114,58 105,64 108,75 100,68 92,75 95,64 86,58 97,58" fill="#d4af37"/>
-          <text x="100" y="155" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="15" fill="#d4af37" letter-spacing="3">KU</text>
-        </svg>
-        <h2 class="text-2xl font-bold text-white" style="font-family:'Playfair Display',serif;">Ujian Selesai</h2>
+     <div class="absolute inset-0 pattern-overlay opacity-30"></div>
+     <div class="relative z-10">
+      <div class="flex justify-center mb-4">
+       <svg class="logo-shimmer" width="70" height="70" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="95" fill="#0d2818" stroke="#d4af37" stroke-width="6"/>
+        <rect x="58" y="72" width="38" height="52" rx="4" fill="#d4af37" opacity="0.9"/>
+        <rect x="104" y="72" width="38" height="52" rx="4" fill="#f4d03f" opacity="0.9"/>
+        <rect x="96" y="68" width="8" height="60" rx="4" fill="#b8960c"/>
+        <polygon points="100,48 103,58 114,58 105,64 108,75 100,68 92,75 95,64 86,58 97,58" fill="#d4af37"/>
+        <text x="100" y="155" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="15" fill="#d4af37" letter-spacing="3">KU</text>
+       </svg>
       </div>
+      <h2 class="text-2xl font-bold text-white" style="font-family:'Playfair Display',serif;">Ujian Selesai</h2>
+     </div>
     </div>
     <div class="p-8">
-      <p class="text-green-800 mb-6" style="font-family:'Inter',sans-serif;">Terima kasih telah mengikuti <strong>PSAJ</strong> dengan jujur dan bertanggung jawab.</p>
-      <p class="text-gray-600 text-sm mb-6" style="font-family:'Inter',sans-serif;">Jawaban Anda telah tersimpan. Hasil akan diumumkan sesuai jadwal.</p>
-      <div class="p-4 bg-green-50 rounded-xl border border-green-200">
-        <p id="finish-info" class="text-green-700 text-sm" style="font-family:'Inter',sans-serif;"></p>
-      </div>
-      <button id="btn-back-login" disabled
-              class="mt-6 w-full py-3 bg-gray-300 text-gray-500 font-bold rounded-xl cursor-not-allowed"
-              style="font-family:'Inter',sans-serif;">
-        🔒 Ujian Sudah Selesai
-      </button>
+     <p class="text-green-800 mb-6" style="font-family:'Inter',sans-serif;">Terima kasih telah mengikuti <strong>PSAJ</strong> dengan jujur dan bertanggung jawab.</p>
+     <p class="text-gray-600 text-sm mb-6" style="font-family:'Inter',sans-serif;">Jawaban Anda telah tersimpan. Hasil akan diumumkan sesuai jadwal.</p>
+     <div class="p-4 bg-green-50 rounded-xl border border-green-200">
+      <p id="finish-info" class="text-green-700 text-sm" style="font-family:'Inter',sans-serif;"></p>
+     </div>
+     <button id="btn-back-login" disabled
+             class="mt-6 w-full py-3 bg-gray-300 text-gray-500 font-bold rounded-xl cursor-not-allowed"
+             style="font-family:'Inter',sans-serif;">
+       🔒 Ujian Sudah Selesai
+     </button>
     </div>
+   </div>
   </div>
-</div>
 
-<!-- ==================== POPUP PELANGGARAN (AUTO-RESET) ==================== -->
-<div id="violation-popup" class="hidden fixed inset-0 bg-black/95 flex items-center justify-center z-[9999] p-4">
-  <div class="bg-red-600 rounded-3xl p-8 max-w-md w-full animate-shake shadow-2xl border-4 border-red-300">
+  <!-- ==================== POPUP PELANGGARAN ==================== -->
+  <div id="violation-popup" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4">
+   <div class="bg-red-600 rounded-3xl p-8 max-w-md w-full animate-shake shadow-2xl">
     <div class="text-center">
-      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
-        <span class="text-5xl">🚨</span>
-      </div>
-      <h2 class="text-2xl font-bold text-white mb-2" style="font-family:'Playfair Display',serif;">TERDETEKSI KECURANGAN!</h2>
-      <p id="violation-reason" class="text-red-100 mb-4 text-sm font-semibold" style="font-family:'Inter',sans-serif;"></p>
-      <div class="bg-white/20 rounded-xl p-4 mb-4">
-        <p class="text-white text-sm" style="font-family:'Inter',sans-serif;">
-          <strong>⚠️ SOAL AKAN DIRESET OTOMATIS</strong><br>
-          Anda akan dikembalikan ke halaman login dan harus memasukkan kode ujian ulang.
-        </p>
-      </div>
-      <!-- Countdown bar -->
-      <div class="bg-white/20 rounded-full h-2 mb-3 overflow-hidden">
-        <div id="violation-countdown-bar" class="h-full bg-white rounded-full" style="width:100%;"></div>
-      </div>
-      <p id="violation-countdown-text" class="text-red-200 text-sm font-bold" style="font-family:'Inter',sans-serif;">Kembali ke login dalam <span id="vcount">5</span> detik...</p>
-      <p class="text-red-200 text-xs mt-3" style="font-family:'Inter',sans-serif;">Hubungi pengawas jika ini kesalahan sistem.</p>
+     <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center"><span class="text-5xl">🚨</span></div>
+     <h2 class="text-2xl font-bold text-white mb-4" style="font-family:'Playfair Display',serif;">TERDETEKSI KECURANGAN!</h2>
+     <p id="violation-reason" class="text-red-100 mb-6" style="font-family:'Inter',sans-serif;">Anda keluar dari halaman ujian.</p>
+     <div class="bg-white/20 rounded-xl p-4 mb-6">
+      <p class="text-white text-sm" style="font-family:'Inter',sans-serif;"><strong>PSAJ = ZERO TOLERANCE</strong><br>Ujian Anda telah dihentikan dan tidak dapat dilanjutkan.</p>
+     </div>
+     <p class="text-red-200 text-xs" style="font-family:'Inter',sans-serif;">Silakan hubungi pengawas untuk informasi lebih lanjut.</p>
     </div>
+   </div>
   </div>
-</div>
 
-<!-- ==================== POPUP BLOKIR TAB BARU ==================== -->
-<div id="newtab-popup" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4">
-  <div class="bg-orange-600 rounded-3xl p-8 max-w-md w-full animate-shake shadow-2xl border-4 border-orange-300">
+  <!-- ==================== POPUP WAKTU HABIS ==================== -->
+  <div id="timeout-popup" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4">
+   <div class="bg-gradient-main rounded-3xl p-8 max-w-md w-full animate-fade-in shadow-2xl border-4 border-yellow-400">
     <div class="text-center">
-      <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
-        <span class="text-5xl">🚫</span>
-      </div>
-      <h2 class="text-xl font-bold text-white mb-2" style="font-family:'Playfair Display',serif;">TAB BARU DIBLOKIR!</h2>
-      <p class="text-orange-100 text-sm mb-4" style="font-family:'Inter',sans-serif;">Membuka tab/jendela baru selama ujian <strong>tidak diizinkan</strong>.</p>
-      <div class="bg-white/20 rounded-xl p-3 mb-4">
-        <p class="text-white text-xs" style="font-family:'Inter',sans-serif;">Jika terulang, ujian akan dihentikan dan direset otomatis.</p>
-      </div>
-      <button onclick="closeNewTabPopup()" class="w-full py-3 bg-white text-orange-700 font-bold rounded-xl" style="font-family:'Inter',sans-serif;">
-        ✅ Saya Mengerti, Kembali ke Ujian
-      </button>
+     <div class="w-20 h-20 mx-auto mb-4 bg-gradient-gold rounded-full flex items-center justify-center"><span class="text-5xl">⏰</span></div>
+     <h2 class="text-2xl font-bold text-white mb-4" style="font-family:'Playfair Display',serif;">WAKTU HABIS!</h2>
+     <p class="text-green-200 mb-6" style="font-family:'Inter',sans-serif;">Waktu pengerjaan ujian telah berakhir.</p>
+     <button onclick="handleTimeoutClose()" class="w-full py-3 bg-gradient-gold text-green-900 font-bold rounded-xl" style="font-family:'Inter',sans-serif;">Tutup</button>
     </div>
+   </div>
   </div>
-</div>
 
-<!-- ==================== POPUP WAKTU HABIS ==================== -->
-<div id="timeout-popup" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4">
-  <div class="bg-gradient-main rounded-3xl p-8 max-w-md w-full animate-fade-in shadow-2xl border-4 border-yellow-400">
+  <!-- ==================== KONFIRMASI FULLSCREEN ==================== -->
+  <div id="fullscreen-prompt" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4">
+   <div class="bg-gradient-main rounded-3xl p-8 max-w-md w-full animate-fade-in shadow-2xl border-4 border-yellow-400">
     <div class="text-center">
-      <div class="w-20 h-20 mx-auto mb-4 bg-gradient-gold rounded-full flex items-center justify-center">
-        <span class="text-5xl">⏰</span>
-      </div>
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family:'Playfair Display',serif;">WAKTU HABIS!</h2>
-      <p class="text-green-200 mb-6" style="font-family:'Inter',sans-serif;">Waktu pengerjaan ujian telah berakhir. Jawaban Anda telah tersimpan.</p>
-      <button onclick="handleTimeoutClose()" class="w-full py-3 bg-gradient-gold text-green-900 font-bold rounded-xl" style="font-family:'Inter',sans-serif;">Selesai</button>
+     <div class="w-20 h-20 mx-auto mb-4 bg-gradient-gold rounded-full flex items-center justify-center"><span class="text-5xl">📱</span></div>
+     <h2 class="text-2xl font-bold text-white mb-4" style="font-family:'Playfair Display',serif;">MODE FULLSCREEN</h2>
+     <p class="text-green-200 mb-6" style="font-family:'Inter',sans-serif;">Ujian akan dimulai dalam mode layar penuh. <strong class="text-yellow-400">JANGAN KELUAR</strong> dari mode ini atau ujian akan dihentikan.</p>
+     <button id="btn-start-fullscreen" class="w-full py-4 bg-gradient-gold text-green-900 font-bold rounded-xl shadow-lg" style="font-family:'Inter',sans-serif;">🚀 MULAI UJIAN FULLSCREEN</button>
     </div>
+   </div>
   </div>
-</div>
 
-<!-- ==================== KONFIRMASI FULLSCREEN ==================== -->
-<div id="fullscreen-prompt" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4">
-  <div class="bg-gradient-main rounded-3xl p-8 max-w-md w-full animate-fade-in shadow-2xl border-4 border-yellow-400">
-    <div class="text-center">
-      <div class="w-20 h-20 mx-auto mb-4 bg-gradient-gold rounded-full flex items-center justify-center">
-        <span class="text-5xl">📱</span>
-      </div>
-      <h2 class="text-2xl font-bold text-white mb-2" style="font-family:'Playfair Display',serif;">PERHATIAN PENTING</h2>
-      <div class="bg-white/10 rounded-xl p-4 mb-4 text-left space-y-2">
-        <p class="text-yellow-300 text-sm font-bold" style="font-family:'Inter',sans-serif;">Aturan yang WAJIB dipatuhi:</p>
-        <p class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">🔒 Jangan keluar dari mode fullscreen</p>
-        <p class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">🚫 Jangan buka tab atau jendela baru</p>
-        <p class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">📵 Jangan beralih ke aplikasi lain</p>
-        <p class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">↩️ Jangan menekan tombol Back/Home</p>
-        <p class="text-green-200 text-xs" style="font-family:'Inter',sans-serif;">🔧 Jangan membuka Developer Tools</p>
-        <p class="text-red-300 text-xs font-bold mt-2" style="font-family:'Inter',sans-serif;">⚠️ Pelanggaran = Soal direset & harus login ulang!</p>
-      </div>
-      <button id="btn-start-fullscreen" class="w-full py-4 bg-gradient-gold text-green-900 font-bold rounded-xl shadow-lg" style="font-family:'Inter',sans-serif;">
-        🚀 SAYA MENGERTI, MULAI UJIAN
-      </button>
-    </div>
-  </div>
-</div>
+  <script>
+        // ==================== KONFIGURASI ====================
+        const defaultConfig = {
+            school_name: 'SMA Khairul Ulum',
+            exam_code: 'PSAJ2026'
+        };
+        let VALID_EXAM_CODE = defaultConfig.exam_code;
+        const EXAM_DURATION_MINUTES = 120;
 
-<!-- ==================== OVERLAY SAAT UJIAN DIKUNCI (Minimize/Blur) ==================== -->
-<div id="focus-lock-overlay" class="hidden fixed inset-0 bg-black z-[10000] flex items-center justify-center">
-  <div class="text-center p-8">
-    <div class="text-6xl mb-4">🔒</div>
-    <h2 class="text-2xl font-bold text-red-400 mb-2" style="font-family:'Playfair Display',serif;">LAYAR DIKUNCI</h2>
-    <p class="text-gray-300 text-sm" style="font-family:'Inter',sans-serif;">Kembali ke aplikasi ujian untuk melanjutkan.</p>
-    <p class="text-yellow-400 text-xs mt-2" style="font-family:'Inter',sans-serif;">Pelanggaran sedang dicatat...</p>
-  </div>
-</div>
+        // ==================== FORM MAPPING ====================
+        const FORM_MAPPING = {
+            'XII-1': {
+                'Pendidikan Agama Islam': '',
+                'Bahasa Indonesia': '',
+                'Bahasa Inggris': '',
+                'Matematika': '',
+                'Biologi': '',
+                'Fisika': '',
+                'Kimia': '',
+                'Pendidikan Pancasila': '',
+                'Sosiologi': '',
+                'Ekonomi': '',
+                'Sejarah': '',
+                'Geografi': '',
+                'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/1FAIpQLSd0jEb1EqF1auyEGZAL9JhhLrgkbHrZtWGKyr_0T5aDomUQ8g/viewform?embedded=true',
+                'PJOK': '',
+                'Seni Budaya': '',
+                'Bahasa Arab': ''
+            },
+            'XII-2': {
+                'Pendidikan Agama Islam': '',
+                'Bahasa Indonesia': '',
+                'Bahasa Inggris': '',
+                'Matematika': '',
+                'Biologi': '',
+                'Fisika': '',
+                'Kimia': '',
+                'Pendidikan Pancasila': '',
+                'Sosiologi': '',
+                'Ekonomi': '',
+                'Sejarah': '',
+                'Geografi': '',
+                'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/1FAIpQLSd0jEb1EqF1auyEGZAL9JhhLrgkbHrZtWGKyr_0T5aDomUQ8g/viewform?usp=sharing&ouid=118312355619034914939embedded=true',
+                'PJOK': '',
+                'Seni Budaya': '',
+                'Bahasa Arab': ''
+            }
+        };
 
-<script>
-  // ==================== KONFIGURASI ====================
-  const VALID_EXAM_CODE = 'PSAJ2026';
-  const EXAM_DURATION_MINUTES = 120;
-  const MAX_NEWTAB_WARNINGS = 1; // 1 peringatan, ke-2 langsung reset
+        const MAPEL_BY_KELAS = {
+            'XII-1': ['Pendidikan Agama Islam','Bahasa Indonesia','Bahasa Inggris','Matematika','Biologi','Fisika','Kimia','Pendidikan Pancasila','Sosiologi','Ekonomi','Sejarah','Geografi','Teknologi Informasi dan Komunikasi','PJOK','Seni Budaya','Bahasa Arab'],
+            'XII-2': ['Pendidikan Agama Islam','Bahasa Indonesia','Bahasa Inggris','Matematika','Biologi','Fisika','Kimia','Pendidikan Pancasila','Sosiologi','Ekonomi','Sejarah','Geografi','Teknologi Informasi dan Komunikasi','PJOK','Seni Budaya','Bahasa Arab']
+        };
 
-  const FORM_MAPPING = {
-    'XII-1': {
-      'Pendidikan Agama Islam': '',
-      'Bahasa Indonesia': '',
-      'Bahasa Inggris': '',
-      'Matematika': '',
-      'Biologi': '',
-      'Fisika': '',
-      'Kimia': '',
-      'Pendidikan Pancasila': '',
-      'Sosiologi': '',
-      'Ekonomi': '',
-      'Sejarah': '',
-      'Geografi': '',
-      'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/1FAIpQLSd0jEb1EqF1auyEGZAL9JhhLrgkbHrZtWGKyr_0T5aDomUQ8g/viewform?embedded=true',
-      'PJOK': '',
-      'Seni Budaya': '',
-      'Bahasa Arab': ''
-    },
-    'XII-2': {
-      'Pendidikan Agama Islam': '',
-      'Bahasa Indonesia': '',
-      'Bahasa Inggris': '',
-      'Matematika': '',
-      'Biologi': '',
-      'Fisika': '',
-      'Kimia': '',
-      'Pendidikan Pancasila': '',
-      'Sosiologi': '',
-      'Ekonomi': '',
-      'Sejarah': '',
-      'Geografi': '',
-      'Teknologi Informasi dan Komunikasi': 'https://docs.google.com/forms/d/e/1FAIpQLSd0jEb1EqF1auyEGZAL9JhhLrgkbHrZtWGKyr_0T5aDomUQ8g/viewform?usp=sharing&embedded=true',
-      'PJOK': '',
-      'Seni Budaya': '',
-      'Bahasa Arab': ''
-    }
-  };
+        // ==================== STATE ====================
+        let examTimer = null;
+        let remainingSeconds = EXAM_DURATION_MINUTES * 60;
+        let isExamActive = false;
+        let violationDetected = false;
+        let currentStudentData = null;
 
-  const MAPEL_BY_KELAS = {
-    'XII-1': ['Pendidikan Agama Islam','Bahasa Indonesia','Bahasa Inggris','Matematika','Biologi','Fisika','Kimia','Pendidikan Pancasila','Sosiologi','Ekonomi','Sejarah','Geografi','Teknologi Informasi dan Komunikasi','PJOK','Seni Budaya','Bahasa Arab'],
-    'XII-2': ['Pendidikan Agama Islam','Bahasa Indonesia','Bahasa Inggris','Matematika','Biologi','Fisika','Kimia','Pendidikan Pancasila','Sosiologi','Ekonomi','Sejarah','Geografi','Teknologi Informasi dan Komunikasi','PJOK','Seni Budaya','Bahasa Arab']
-  };
+        // ==================== DOM ====================
+        const loginPage = document.getElementById('login-page');
+        const examPage = document.getElementById('exam-page');
+        const finishPage = document.getElementById('finish-page');
+        const loginForm = document.getElementById('login-form');
+        const errorMessage = document.getElementById('error-message');
+        const kelasSelect = document.getElementById('kelas');
+        const mapelSelect = document.getElementById('mapel');
+        const timerDisplay = document.getElementById('timer');
+        const examIframe = document.getElementById('exam-iframe');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const violationPopup = document.getElementById('violation-popup');
+        const violationReason = document.getElementById('violation-reason');
+        const timeoutPopup = document.getElementById('timeout-popup');
+        const fullscreenPrompt = document.getElementById('fullscreen-prompt');
+        const btnStartFullscreen = document.getElementById('btn-start-fullscreen');
 
-  // ==================== STATE ====================
-  let examTimer = null;
-  let remainingSeconds = EXAM_DURATION_MINUTES * 60;
-  let isExamActive = false;
-  let violationDetected = false;
-  let currentStudentData = null;
-  let newTabWarningCount = 0;
-  let violationCountdownTimer = null;
-  let blockNewTabAttempts = true;
-  let exitAttemptCount = 0;
+        // ==================== INIT ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            checkExistingSession();
+            preventBackNavigation();
+            setupAntiCheating();
+        });
 
-  // ==================== DOM ====================
-  const loginPage      = document.getElementById('login-page');
-  const examPage       = document.getElementById('exam-page');
-  const finishPage     = document.getElementById('finish-page');
-  const loginForm      = document.getElementById('login-form');
-  const errorMessage   = document.getElementById('error-message');
-  const kelasSelect    = document.getElementById('kelas');
-  const mapelSelect    = document.getElementById('mapel');
-  const timerDisplay   = document.getElementById('timer');
-  const examIframe     = document.getElementById('exam-iframe');
-  const loadingOverlay = document.getElementById('loading-overlay');
-  const violationPopup = document.getElementById('violation-popup');
-  const violationReason= document.getElementById('violation-reason');
-  const timeoutPopup   = document.getElementById('timeout-popup');
-  const fullscreenPrompt = document.getElementById('fullscreen-prompt');
-  const btnStartFullscreen = document.getElementById('btn-start-fullscreen');
-  const newtabPopup    = document.getElementById('newtab-popup');
-  const focusLockOverlay = document.getElementById('focus-lock-overlay');
-  const warningBar     = document.getElementById('warning-bar');
-  const warningBarText = document.getElementById('warning-bar-text');
-
-  // ==================== INIT ====================
-  document.addEventListener('DOMContentLoaded', function() {
-    setupEventListeners();
-    checkExistingSession();
-    preventBackNavigation();
-    setupAntiCheating();
-    blockNewTabShortcuts();
-  });
-
-  function setupEventListeners() {
-    kelasSelect.addEventListener('change', function() { updateMapelOptions(this.value); });
-    loginForm.addEventListener('submit', function(e) { e.preventDefault(); handleLogin(); });
-    btnStartFullscreen.addEventListener('click', function() { startExamFullscreen(); });
-    examIframe.addEventListener('load', function() {
-      setTimeout(() => { loadingOverlay.classList.add('hidden'); }, 1000);
-    });
-  }
-
-  function updateMapelOptions(kelas) {
-    mapelSelect.innerHTML = '<option value="">-- Pilih Mata Pelajaran --</option>';
-    if (kelas && MAPEL_BY_KELAS[kelas]) {
-      mapelSelect.disabled = false;
-      MAPEL_BY_KELAS[kelas].forEach(m => {
-        const o = document.createElement('option');
-        o.value = m; o.textContent = m;
-        mapelSelect.appendChild(o);
-      });
-    } else {
-      mapelSelect.disabled = true;
-      mapelSelect.innerHTML = '<option value="">-- Pilih Kelas Terlebih Dahulu --</option>';
-    }
-  }
-
-  function handleLogin() {
-    const nama  = document.getElementById('nama').value.trim();
-    const nis   = document.getElementById('nis').value.trim();
-    const kelas = kelasSelect.value;
-    const mapel = mapelSelect.value;
-    const kodeUjian = document.getElementById('kode-ujian').value;
-    if (!nama || !nis || !kelas || !mapel || !kodeUjian) { showError('Semua field wajib diisi!'); return; }
-    if (kodeUjian !== VALID_EXAM_CODE) { showError('Kode ujian tidak valid!'); shakeElement(document.getElementById('kode-ujian')); return; }
-    currentStudentData = { nama, nis, kelas, mapel, token: generateToken(), startTime: Date.now() };
-    sessionStorage.setItem('psaj_session', JSON.stringify(currentStudentData));
-    hideError();
-    fullscreenPrompt.classList.remove('hidden');
-  }
-
-  function startExamFullscreen() {
-    fullscreenPrompt.classList.add('hidden');
-    const docEl = document.documentElement;
-    if (docEl.requestFullscreen) {
-      docEl.requestFullscreen().then(() => startExam()).catch(() => startExam());
-    } else if (docEl.webkitRequestFullscreen) {
-      docEl.webkitRequestFullscreen(); startExam();
-    } else { startExam(); }
-  }
-
-  function startExam() {
-    isExamActive = true;
-    violationDetected = false;
-    newTabWarningCount = 0;
-    exitAttemptCount = 0;
-    loginPage.classList.add('hidden');
-    examPage.classList.remove('hidden');
-    loadingOverlay.classList.remove('hidden');
-    document.getElementById('exam-title').textContent = `PSAJ - ${currentStudentData.mapel}`;
-    document.getElementById('student-info').textContent = `${currentStudentData.nama} - ${currentStudentData.nis} - ${currentStudentData.kelas}`;
-    loadGoogleForm();
-    startTimer();
-    activateStrictMode();
-  }
-
-  function loadGoogleForm() {
-    const { kelas, mapel } = currentStudentData;
-    let formUrl = FORM_MAPPING[kelas]?.[mapel];
-    if (!formUrl) {
-      examIframe.srcdoc = `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:linear-gradient(135deg,#f0fdf4,#dcfce7);padding:20px;box-sizing:border-box}.container{text-align:center;max-width:500px;background:white;padding:40px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.1)}h1{color:#1a472a}p{color:#666;line-height:1.6}.badge{display:inline-block;background:linear-gradient(135deg,#d4af37,#f4d03f);color:#1a472a;padding:10px 20px;border-radius:30px;font-weight:bold;margin-top:20px}.info{background:#f0fdf4;padding:15px;border-radius:10px;margin-top:20px;font-size:14px;color:#1a472a}</style></head><body><div class="container"><h1>📝 ${mapel}</h1><p>Soal ujian <strong>${mapel}</strong> untuk kelas <strong>${kelas}</strong>.</p><div class="badge">DEMO MODE</div><div class="info"><strong>Catatan Admin:</strong><br>Ganti URL di FORM_MAPPING dengan URL Google Form yang sebenarnya.</div></div></body></html>`;
-    } else {
-      examIframe.src = formUrl;
-    }
-  }
-
-  function startTimer() {
-    updateTimerDisplay();
-    examTimer = setInterval(() => {
-      remainingSeconds--;
-      updateTimerDisplay();
-      if (remainingSeconds <= 0) handleTimeUp();
-      if (remainingSeconds === 600) timerDisplay.classList.add('text-yellow-400');
-      if (remainingSeconds <= 300) { timerDisplay.classList.remove('text-yellow-400'); timerDisplay.classList.add('text-red-400', 'countdown-flash'); }
-    }, 1000);
-  }
-
-  function updateTimerDisplay() {
-    const m = Math.floor(remainingSeconds / 60);
-    const s = remainingSeconds % 60;
-    timerDisplay.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-  }
-
-  function handleTimeUp() {
-    clearInterval(examTimer);
-    isExamActive = false;
-    markExamCompleted();
-    timeoutPopup.classList.remove('hidden');
-  }
-
-  function handleTimeoutClose() {
-    timeoutPopup.classList.add('hidden');
-    showFinishPage();
-  }
-
-  // ==================== ANTI-CHEATING CORE ====================
-
-  function setupAntiCheating() {
-    // Block right-click
-    document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
-
-    // Block print screen & keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-      const tag = e.target.tagName;
-
-      // DevTools
-      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key))) {
-        e.preventDefault();
-        if (isExamActive) triggerViolation('Mencoba membuka Developer Tools');
-        return false;
-      }
-      // View source
-      if (e.ctrlKey && e.key === 'u') { e.preventDefault(); if (isExamActive) triggerViolation('Mencoba melihat source code'); return false; }
-      // Print
-      if (e.ctrlKey && e.key === 'p') { e.preventDefault(); return false; }
-      // Save
-      if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
-      // Select all
-      if (e.ctrlKey && e.key === 'a') { e.preventDefault(); return false; }
-      // Copy/paste (outside inputs)
-      if (e.ctrlKey && ['c','v','x'].includes(e.key) && tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); return false; }
-      // Print screen
-      if (e.key === 'PrintScreen') { e.preventDefault(); if (isExamActive) showWarning('Screenshot diblokir!'); return false; }
-      // Escape in exam
-      if (e.key === 'Escape' && isExamActive) { e.preventDefault(); return false; }
-
-      // *** BLOKIR SHORTCUT BUKA TAB BARU ***
-      if (isExamActive) {
-        // Ctrl+T (new tab), Ctrl+N (new window), Ctrl+W (close tab), Alt+F4, F5 reload
-        if (e.ctrlKey && e.key === 't') { e.preventDefault(); handleNewTabAttempt(); return false; }
-        if (e.ctrlKey && e.key === 'n') { e.preventDefault(); handleNewTabAttempt(); return false; }
-        if (e.ctrlKey && e.shiftKey && e.key === 'N') { e.preventDefault(); handleNewTabAttempt(); return false; }
-        if (e.ctrlKey && e.key === 'w') { e.preventDefault(); handleExitAttempt('Mencoba menutup tab ujian'); return false; }
-        if (e.altKey && e.key === 'F4') { e.preventDefault(); handleExitAttempt('Mencoba menutup aplikasi (Alt+F4)'); return false; }
-        if (e.key === 'F5' || (e.ctrlKey && e.key === 'r')) { e.preventDefault(); handleExitAttempt('Mencoba me-reload halaman ujian'); return false; }
-        // Alt+Tab detection (partial - triggers blur)
-        if (e.altKey && e.key === 'Tab') { e.preventDefault(); return false; }
-        // Windows key
-        if (e.key === 'Meta' || e.key === 'OS') { e.preventDefault(); return false; }
-      }
-    });
-
-    document.addEventListener('dragstart', e => { e.preventDefault(); return false; });
-    document.addEventListener('selectstart', function(e) {
-      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); return false; }
-    });
-  }
-
-  function blockNewTabShortcuts() {
-    // Intercept window.open
-    const originalOpen = window.open;
-    window.open = function(...args) {
-      if (isExamActive) {
-        handleNewTabAttempt();
-        return null;
-      }
-      return originalOpen.apply(window, args);
-    };
-  }
-
-  function activateStrictMode() {
-    // Visibility change (alt-tab, minimize, or tab switch)
-    document.addEventListener('visibilitychange', function() {
-      if (!isExamActive || violationDetected) return;
-      if (document.hidden) {
-        // Show black overlay
-        focusLockOverlay.classList.remove('hidden');
-        // After 2 seconds still hidden = violation
-        setTimeout(() => {
-          if (document.hidden && isExamActive && !violationDetected) {
-            focusLockOverlay.classList.add('hidden');
-            triggerViolation('Keluar dari tab ujian / beralih aplikasi');
-          }
-        }, 2000);
-      } else {
-        focusLockOverlay.classList.add('hidden');
-      }
-    });
-
-    // Window blur (switched to another app)
-    window.addEventListener('blur', function() {
-      if (!isExamActive || violationDetected) return;
-      focusLockOverlay.classList.remove('hidden');
-      setTimeout(() => {
-        if (!document.hasFocus() && isExamActive && !violationDetected) {
-          focusLockOverlay.classList.add('hidden');
-          triggerViolation('Membuka aplikasi lain / kehilangan fokus');
+        function setupEventListeners() {
+            kelasSelect.addEventListener('change', function() { updateMapelOptions(this.value); });
+            loginForm.addEventListener('submit', function(e) { e.preventDefault(); handleLogin(); });
+            btnStartFullscreen.addEventListener('click', function() { startExamFullscreen(); });
+            examIframe.addEventListener('load', function() {
+                setTimeout(() => { loadingOverlay.classList.add('hidden'); }, 1000);
+            });
         }
-      }, 3000);
-    });
 
-    window.addEventListener('focus', function() {
-      focusLockOverlay.classList.add('hidden');
-    });
+        function updateMapelOptions(kelas) {
+            mapelSelect.innerHTML = '<option value="">-- Pilih Mata Pelajaran --</option>';
+            if (kelas && MAPEL_BY_KELAS[kelas]) {
+                mapelSelect.disabled = false;
+                MAPEL_BY_KELAS[kelas].forEach(mapel => {
+                    const option = document.createElement('option');
+                    option.value = mapel;
+                    option.textContent = mapel;
+                    mapelSelect.appendChild(option);
+                });
+            } else {
+                mapelSelect.disabled = true;
+                mapelSelect.innerHTML = '<option value="">-- Pilih Kelas Terlebih Dahulu --</option>';
+            }
+        }
 
-    // Fullscreen exit
-    document.addEventListener('fullscreenchange', function() {
-      if (!document.fullscreenElement && isExamActive && !violationDetected) {
-        triggerViolation('Keluar dari mode fullscreen');
-      }
-    });
-    document.addEventListener('webkitfullscreenchange', function() {
-      if (!document.webkitFullscreenElement && isExamActive && !violationDetected) {
-        triggerViolation('Keluar dari mode fullscreen');
-      }
-    });
+        function handleLogin() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const kelas = kelasSelect.value;
+            const mapel = mapelSelect.value;
+            const kodeUjian = document.getElementById('kode-ujian').value;
+            if (!nama || !nis || !kelas || !mapel || !kodeUjian) { showError('Semua field wajib diisi!'); return; }
+            if (kodeUjian !== VALID_EXAM_CODE) { showError('Kode ujian tidak valid!'); shakeElement(document.getElementById('kode-ujian')); return; }
+            currentStudentData = { nama, nis, kelas, mapel, token: generateToken(), startTime: Date.now() };
+            sessionStorage.setItem('psaj_session', JSON.stringify(currentStudentData));
+            hideError();
+            fullscreenPrompt.classList.remove('hidden');
+        }
 
-    // Block unload / close
-    window.addEventListener('beforeunload', function(e) {
-      if (isExamActive) {
-        e.preventDefault();
-        e.returnValue = 'Ujian sedang berlangsung! Apakah Anda yakin ingin keluar?';
-        return e.returnValue;
-      }
-    });
+        function startExamFullscreen() {
+            fullscreenPrompt.classList.add('hidden');
+            const docElement = document.documentElement;
+            if (docElement.requestFullscreen) {
+                docElement.requestFullscreen().then(() => startExam()).catch(() => startExam());
+            } else if (docElement.webkitRequestFullscreen) {
+                docElement.webkitRequestFullscreen(); startExam();
+            } else { startExam(); }
+        }
 
-    // Also use pagehide for mobile
-    window.addEventListener('pagehide', function() {
-      if (isExamActive && !violationDetected) {
-        triggerViolation('Halaman ditutup / navigasi keluar');
-      }
-    });
-  }
+        function startExam() {
+            isExamActive = true;
+            loginPage.classList.add('hidden');
+            examPage.classList.remove('hidden');
+            document.getElementById('exam-title').textContent = `PSAJ - ${currentStudentData.mapel}`;
+            document.getElementById('student-info').textContent = `${currentStudentData.nama} - ${currentStudentData.nis} - ${currentStudentData.kelas}`;
+            loadGoogleForm();
+            startTimer();
+            activateStrictMode();
+        }
 
-  function preventBackNavigation() {
-    history.pushState(null, null, location.href);
-    window.addEventListener('popstate', function() {
-      history.pushState(null, null, location.href);
-      if (isExamActive && !violationDetected) {
-        triggerViolation('Menekan tombol Back browser');
-      }
-    });
-  }
+        function loadGoogleForm() {
+            const { kelas, mapel } = currentStudentData;
+            let formUrl = FORM_MAPPING[kelas]?.[mapel];
+            if (!formUrl || formUrl.includes('FORM_ID')) {
+                examIframe.srcdoc = `<!DOCTYPE html><html><head><style>body{font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:linear-gradient(135deg,#f0fdf4,#dcfce7);padding:20px;box-sizing:border-box}.container{text-align:center;max-width:500px;background:white;padding:40px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.1)}h1{color:#1a472a}p{color:#666;line-height:1.6}.badge{display:inline-block;background:linear-gradient(135deg,#d4af37,#f4d03f);color:#1a472a;padding:10px 20px;border-radius:30px;font-weight:bold;margin-top:20px}.info{background:#f0fdf4;padding:15px;border-radius:10px;margin-top:20px;font-size:14px;color:#1a472a}</style></head><body><div class="container"><h1>📝 ${mapel}</h1><p>Soal ujian ${mapel} untuk kelas ${kelas} akan ditampilkan di sini.</p><div class="badge">DEMO MODE</div><div class="info"><strong>Catatan Admin:</strong><br>Ganti URL di FORM_MAPPING dengan URL Google Form yang sebenarnya.</div></div></body></html>`;
+            } else {
+                examIframe.src = formUrl;
+            }
+        }
 
-  // ==================== NEW TAB HANDLER ====================
-  function handleNewTabAttempt() {
-    if (!isExamActive) return;
-    newTabWarningCount++;
-    if (newTabWarningCount > MAX_NEWTAB_WARNINGS) {
-      triggerViolation('Membuka tab/jendela baru (percobaan ke-' + newTabWarningCount + ')');
-    } else {
-      // First warning — show popup, not terminate
-      newtabPopup.classList.remove('hidden');
-      showWarning(`⚠️ Peringatan ${newTabWarningCount}/${MAX_NEWTAB_WARNINGS}: Jangan buka tab baru!`);
-    }
-  }
+        function startTimer() {
+            updateTimerDisplay();
+            examTimer = setInterval(() => {
+                remainingSeconds--;
+                updateTimerDisplay();
+                if (remainingSeconds <= 0) handleTimeUp();
+                if (remainingSeconds === 600) timerDisplay.classList.add('text-yellow-400');
+                if (remainingSeconds <= 300) { timerDisplay.classList.remove('text-yellow-400'); timerDisplay.classList.add('text-red-400'); }
+            }, 1000);
+        }
 
-  function closeNewTabPopup() {
-    newtabPopup.classList.add('hidden');
-    // Refocus exam window
-    window.focus();
-    if (document.fullscreenElement === null && isExamActive) {
-      document.documentElement.requestFullscreen?.().catch(() => {});
-    }
-  }
+        function updateTimerDisplay() {
+            const m = Math.floor(remainingSeconds / 60);
+            const s = remainingSeconds % 60;
+            timerDisplay.textContent = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+        }
 
-  // ==================== EXIT ATTEMPT HANDLER ====================
-  function handleExitAttempt(reason) {
-    if (!isExamActive) return;
-    exitAttemptCount++;
-    if (exitAttemptCount >= 2) {
-      triggerViolation(reason + ' (percobaan berulang)');
-    } else {
-      showWarning('🚫 ' + reason + ' — diblokir!');
-    }
-  }
+        function handleTimeUp() {
+            clearInterval(examTimer); isExamActive = false;
+            markExamCompleted();
+            timeoutPopup.classList.remove('hidden');
+        }
 
-  // ==================== WARNING BAR ====================
-  function showWarning(msg) {
-    warningBarText.textContent = msg;
-    warningBar.classList.remove('hidden');
-    setTimeout(() => warningBar.classList.add('hidden'), 4000);
-  }
+        function handleTimeoutClose() {
+            timeoutPopup.classList.add('hidden');
+            showFinishPage();
+        }
 
-  // ==================== VIOLATION → AUTO RESET ====================
-  function triggerViolation(reason) {
-    if (violationDetected) return;
-    violationDetected = true;
-    isExamActive = false;
+        function setupAntiCheating() {
+            document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12') { e.preventDefault(); if (isExamActive) triggerViolation('Mencoba membuka Developer Tools (F12)'); return false; }
+                if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); if (isExamActive) triggerViolation('Mencoba membuka Developer Tools'); return false; }
+                if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); if (isExamActive) triggerViolation('Mencoba membuka Console'); return false; }
+                if (e.ctrlKey && e.key === 'u') { e.preventDefault(); if (isExamActive) triggerViolation('Mencoba melihat source code'); return false; }
+                if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+                if (e.ctrlKey && e.key === 'c' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); return false; }
+                if (e.ctrlKey && e.key === 'v' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); return false; }
+                if (e.ctrlKey && e.key === 'a') { e.preventDefault(); return false; }
+                if (e.ctrlKey && e.key === 'p') { e.preventDefault(); return false; }
+                if (e.key === 'Escape' && isExamActive) { e.preventDefault(); return false; }
+            });
+            document.addEventListener('dragstart', e => { e.preventDefault(); return false; });
+            document.addEventListener('selectstart', function(e) {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); return false; }
+            });
+        }
 
-    if (examTimer) { clearInterval(examTimer); examTimer = null; }
-    focusLockOverlay.classList.add('hidden');
-    newtabPopup.classList.add('hidden');
+        function activateStrictMode() {
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden && isExamActive && !violationDetected) triggerViolation('Keluar dari tab ujian');
+            });
+            window.addEventListener('blur', function() {
+                if (isExamActive && !violationDetected) {
+                    setTimeout(() => { if (document.hidden && isExamActive && !violationDetected) triggerViolation('Membuka aplikasi lain'); }, 100);
+                }
+            });
+            document.addEventListener('fullscreenchange', function() {
+                if (!document.fullscreenElement && isExamActive && !violationDetected) triggerViolation('Keluar dari mode fullscreen');
+            });
+            document.addEventListener('webkitfullscreenchange', function() {
+                if (!document.webkitFullscreenElement && isExamActive && !violationDetected) triggerViolation('Keluar dari mode fullscreen');
+            });
+            window.onbeforeunload = function(e) {
+                if (isExamActive) { e.preventDefault(); e.returnValue = ''; return ''; }
+            };
+        }
 
-    // Log violation
-    if (currentStudentData) {
-      const violations = JSON.parse(localStorage.getItem('psaj_violations') || '[]');
-      violations.push({
-        nis: currentStudentData.nis,
-        nama: currentStudentData.nama,
-        kelas: currentStudentData.kelas,
-        mapel: currentStudentData.mapel,
-        reason,
-        timestamp: Date.now(),
-        timeRemaining: remainingSeconds
-      });
-      localStorage.setItem('psaj_violations', JSON.stringify(violations));
-    }
+        function preventBackNavigation() {
+            history.pushState(null, null, location.href);
+            window.addEventListener('popstate', function() {
+                history.pushState(null, null, location.href);
+                if (isExamActive && !violationDetected) triggerViolation('Menekan tombol back');
+            });
+        }
 
-    // Clear session so they must re-login
-    sessionStorage.removeItem('psaj_session');
+        function triggerViolation(reason) {
+            if (violationDetected) return;
+            violationDetected = true; isExamActive = false;
+            if (examTimer) clearInterval(examTimer);
+            if (currentStudentData) {
+                localStorage.setItem(`psaj_violation_${currentStudentData.nis}`, JSON.stringify({ nis: currentStudentData.nis, nama: currentStudentData.nama, mapel: currentStudentData.mapel, reason, timestamp: Date.now() }));
+                markExamCompleted();
+            }
+            sessionStorage.removeItem('psaj_session');
+            violationReason.textContent = reason;
+            violationPopup.classList.remove('hidden');
+            setTimeout(() => { violationPopup.classList.add('hidden'); showLoginPage(); }, 5000);
+        }
 
-    // Reset timer for next attempt
-    remainingSeconds = EXAM_DURATION_MINUTES * 60;
+        function markExamCompleted() {
+            if (currentStudentData) {
+                localStorage.setItem(`psaj_completed_${currentStudentData.nis}_${currentStudentData.mapel}`, JSON.stringify({ nis: currentStudentData.nis, nama: currentStudentData.nama, kelas: currentStudentData.kelas, mapel: currentStudentData.mapel, completedAt: Date.now() }));
+            }
+        }
 
-    // Show violation popup with countdown
-    violationReason.textContent = `Alasan: ${reason}`;
-    violationPopup.classList.remove('hidden');
+        function checkExistingSession() {
+            const session = sessionStorage.getItem('psaj_session');
+            if (session) {
+                try {
+                    currentStudentData = JSON.parse(session);
+                    const examKey = `psaj_completed_${currentStudentData.nis}_${currentStudentData.mapel}`;
+                    if (localStorage.getItem(examKey)) { showFinishPage(); return; }
+                    const elapsed = Math.floor((Date.now() - currentStudentData.startTime) / 1000);
+                    remainingSeconds = Math.max(0, (EXAM_DURATION_MINUTES * 60) - elapsed);
+                    if (remainingSeconds > 0) { fullscreenPrompt.classList.remove('hidden'); } else { markExamCompleted(); showFinishPage(); }
+                } catch (e) { sessionStorage.removeItem('psaj_session'); }
+            }
+        }
 
-    // Countdown 5 seconds then auto-redirect to login
-    let countdownSec = 5;
-    const countBar = document.getElementById('violation-countdown-bar');
-    const countText = document.getElementById('vcount');
-    countBar.style.width = '100%';
-    countBar.style.transition = `width ${countdownSec}s linear`;
-    setTimeout(() => { countBar.style.width = '0%'; }, 50);
-    countText.textContent = countdownSec;
+        function showLoginPage() {
+            loginPage.classList.remove('hidden'); examPage.classList.add('hidden'); finishPage.classList.add('hidden');
+            loginForm.reset(); mapelSelect.disabled = true;
+            mapelSelect.innerHTML = '<option value="">-- Pilih Kelas Terlebih Dahulu --</option>';
+            isExamActive = false; violationDetected = false; currentStudentData = null;
+            remainingSeconds = EXAM_DURATION_MINUTES * 60;
+        }
 
-    violationCountdownTimer = setInterval(() => {
-      countdownSec--;
-      countText.textContent = Math.max(0, countdownSec);
-      if (countdownSec <= 0) {
-        clearInterval(violationCountdownTimer);
-        violationPopup.classList.add('hidden');
-        // Exit fullscreen
-        if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
-        // Reset to login
-        resetToLogin();
-      }
-    }, 1000);
-  }
+        function showFinishPage() {
+            loginPage.classList.add('hidden'); examPage.classList.add('hidden'); finishPage.classList.remove('hidden');
+            if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+            if (currentStudentData) {
+                document.getElementById('finish-info').innerHTML = `<strong>${currentStudentData.nama}</strong><br>NIS: ${currentStudentData.nis}<br>Kelas: ${currentStudentData.kelas}<br>Mata Pelajaran: ${currentStudentData.mapel}`;
+            }
+            sessionStorage.removeItem('psaj_session'); isExamActive = false;
+        }
 
-  function resetToLogin() {
-    // Stop all timers
-    if (examTimer) { clearInterval(examTimer); examTimer = null; }
-    if (violationCountdownTimer) { clearInterval(violationCountdownTimer); violationCountdownTimer = null; }
+        function showError(message) { errorMessage.textContent = message; errorMessage.classList.remove('hidden'); shakeElement(errorMessage); }
+        function hideError() { errorMessage.classList.add('hidden'); }
+        function shakeElement(el) { el.classList.add('animate-shake'); setTimeout(() => el.classList.remove('animate-shake'), 500); }
+        function generateToken() { return 'PSAJ-' + Date.now().toString(36) + '-' + Math.random().toString(36).substr(2,9); }
 
-    // Reset iframe to blank (clears Google Form)
-    examIframe.src = 'about:blank';
-    examIframe.srcdoc = '';
+        let devToolsOpen = false;
+        setInterval(() => {
+            if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) {
+                if (!devToolsOpen && isExamActive) { devToolsOpen = true; triggerViolation('Terdeteksi membuka Developer Tools'); }
+            } else { devToolsOpen = false; }
+        }, 1000);
 
-    // Reset state
-    isExamActive = false;
-    violationDetected = false;
-    currentStudentData = null;
-    newTabWarningCount = 0;
-    exitAttemptCount = 0;
-    remainingSeconds = EXAM_DURATION_MINUTES * 60;
-    timerDisplay.textContent = `${String(EXAM_DURATION_MINUTES).padStart(2,'0')}:00`;
-    timerDisplay.classList.remove('text-yellow-400','text-red-400','countdown-flash');
-
-    // Hide all pages/overlays
-    examPage.classList.add('hidden');
-    finishPage.classList.add('hidden');
-    violationPopup.classList.add('hidden');
-    newtabPopup.classList.add('hidden');
-    focusLockOverlay.classList.add('hidden');
-    warningBar.classList.add('hidden');
-    loadingOverlay.classList.remove('hidden');
-
-    // Reset login form
-    loginForm.reset();
-    mapelSelect.disabled = true;
-    mapelSelect.innerHTML = '<option value="">-- Pilih Kelas Terlebih Dahulu --</option>';
-
-    // Show login
-    loginPage.classList.remove('hidden');
-  }
-
-  // ==================== DEVTOOLS DETECTION ====================
-  let devToolsOpen = false;
-  setInterval(() => {
-    if (!isExamActive) return;
-    if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) {
-      if (!devToolsOpen) { devToolsOpen = true; triggerViolation('Terdeteksi membuka Developer Tools'); }
-    } else { devToolsOpen = false; }
-  }, 1000);
-
-  // Disable console
-  const noop = () => {};
-  ['log','debug','info','warn','error','table','trace','dir'].forEach(m => { try { console[m] = noop; } catch(e) {} });
-
-  // ==================== HELPERS ====================
-  function markExamCompleted() {
-    if (currentStudentData) {
-      localStorage.setItem(`psaj_completed_${currentStudentData.nis}_${currentStudentData.mapel}`, JSON.stringify({
-        nis: currentStudentData.nis, nama: currentStudentData.nama,
-        kelas: currentStudentData.kelas, mapel: currentStudentData.mapel,
-        completedAt: Date.now()
-      }));
-    }
-  }
-
-  function checkExistingSession() {
-    const session = sessionStorage.getItem('psaj_session');
-    if (session) {
-      try {
-        currentStudentData = JSON.parse(session);
-        const examKey = `psaj_completed_${currentStudentData.nis}_${currentStudentData.mapel}`;
-        if (localStorage.getItem(examKey)) { showFinishPage(); return; }
-        const elapsed = Math.floor((Date.now() - currentStudentData.startTime) / 1000);
-        remainingSeconds = Math.max(0, (EXAM_DURATION_MINUTES * 60) - elapsed);
-        if (remainingSeconds > 0) { fullscreenPrompt.classList.remove('hidden'); }
-        else { markExamCompleted(); showFinishPage(); }
-      } catch(e) { sessionStorage.removeItem('psaj_session'); }
-    }
-  }
-
-  function showFinishPage() {
-    loginPage.classList.add('hidden');
-    examPage.classList.add('hidden');
-    finishPage.classList.remove('hidden');
-    if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
-    if (currentStudentData) {
-      document.getElementById('finish-info').innerHTML =
-        `<strong>${currentStudentData.nama}</strong><br>NIS: ${currentStudentData.nis}<br>Kelas: ${currentStudentData.kelas}<br>Mata Pelajaran: ${currentStudentData.mapel}`;
-    }
-    sessionStorage.removeItem('psaj_session');
-    isExamActive = false;
-    if (examTimer) { clearInterval(examTimer); examTimer = null; }
-  }
-
-  function showError(msg) { errorMessage.textContent = msg; errorMessage.classList.remove('hidden'); shakeElement(errorMessage); }
-  function hideError() { errorMessage.classList.add('hidden'); }
-  function shakeElement(el) { el.classList.add('animate-shake'); setTimeout(() => el.classList.remove('animate-shake'), 500); }
-  function generateToken() { return 'PSAJ-' + Date.now().toString(36) + '-' + Math.random().toString(36).substr(2,9); }
-</script>
-</body>
+        const noop = () => {};
+        ['log','debug','info','warn','error','table','trace'].forEach(m => { console[m] = noop; });
+  </script>
+ </body>
 </html>
